@@ -1,5 +1,3 @@
-This is a test to see if git works
-
 # Lab 4: Model Training and Serving with Airflow + FastAPI
 
 In this lab you will build an **end-to-end ML pipeline** using Apache Airflow and serve the trained model with FastAPI.  

@@ -1,0 +1,19 @@
+[2026-03-20T18:16:47.261+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-03-20T18:16:47.269+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: train_model_only.train_model manual__2026-03-20T18:16:43.764881+00:00 [queued]>
+[2026-03-20T18:16:47.274+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: train_model_only.train_model manual__2026-03-20T18:16:43.764881+00:00 [queued]>
+[2026-03-20T18:16:47.274+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 2
+[2026-03-20T18:16:47.289+0000] {taskinstance.py:2888} INFO - Executing <Task(PythonOperator): train_model> on 2026-03-20 18:16:43.764881+00:00
+[2026-03-20T18:16:47.294+0000] {standard_task_runner.py:72} INFO - Started process 3849 to run task
+[2026-03-20T18:16:47.298+0000] {standard_task_runner.py:104} INFO - Running: ['airflow', 'tasks', 'run', 'train_model_only', 'train_model', 'manual__2026-03-20T18:16:43.764881+00:00', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/train_model_dag.py', '--cfg-path', '/tmp/tmp0y7_ubah']
+[2026-03-20T18:16:47.299+0000] {standard_task_runner.py:105} INFO - Job 3: Subtask train_model
+[2026-03-20T18:16:47.481+0000] {task_command.py:467} INFO - Running <TaskInstance: train_model_only.train_model manual__2026-03-20T18:16:43.764881+00:00 [running]> on host ip-172-31-13-187.ec2.internal
+[2026-03-20T18:16:47.526+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='train_model_only' AIRFLOW_CTX_TASK_ID='train_model' AIRFLOW_CTX_EXECUTION_DATE='2026-03-20T18:16:43.764881+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-03-20T18:16:43.764881+00:00'
+[2026-03-20T18:16:47.527+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2026-03-20T18:16:47.565+0000] {logging_mixin.py:190} INFO - [ml_pipeline.model] Model accuracy: 1.0000
+[2026-03-20T18:16:47.567+0000] {logging_mixin.py:190} INFO - [ml_pipeline.model] Saved model to models/iris_model.pkl
+[2026-03-20T18:16:47.568+0000] {python.py:240} INFO - Done. Returned value was: 1.0
+[2026-03-20T18:16:47.585+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2026-03-20T18:16:47.585+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=train_model_only, task_id=train_model, run_id=manual__2026-03-20T18:16:43.764881+00:00, execution_date=20260320T181643, start_date=20260320T181647, end_date=20260320T181647
+[2026-03-20T18:16:47.613+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2026-03-20T18:16:47.746+0000] {taskinstance.py:3900} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-03-20T18:16:47.746+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

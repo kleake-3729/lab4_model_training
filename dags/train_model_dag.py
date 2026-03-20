@@ -6,8 +6,8 @@ import sys, os
 # Ensure src/ is on path
 sys.path.append(os.path.join(os.path.dirname(__file__), "../src"))
 
-from ml_pipeline.data import load_data
-from ml_pipeline.model import train_model
+from ml_pipeline.breast_cancer_data import load_data
+from ml_pipeline.breast_cancer_model import train_model
 
 default_args = {"owner": "airflow", "retries": 1}
 
@@ -28,7 +28,7 @@ with DAG(
         task_id="train_model",
         python_callable=train_model_wrapper,
         op_kwargs={
-            "data_path": "data/iris.csv",
-            "model_path": "models/iris_model.pkl",
+            "data_path": "data/breast_cancer.csv",
+            "model_path": "models/breast_cancer.pkl",
         },
     )
